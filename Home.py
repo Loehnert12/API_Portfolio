@@ -13,7 +13,7 @@ st.set_page_config(
 col1, col2 = st.columns([1, 3])
 
 with col1:
-    st.image("assets/profile.jpg", width=300)
+    st.image("assets/images/profile.jpg", width=300)
 
 with col2:
     st.markdown(

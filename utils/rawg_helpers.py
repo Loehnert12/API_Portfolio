@@ -71,7 +71,7 @@ def display_game_results(games):
 
         with col1:
             if game["Background Image"]:
-                st.image(game["Background Image"], width="content")
+                st.image(game["Background Image"], width=300)
 
         with col2:
             
@@ -92,7 +92,7 @@ def display_top_rated(games):
     for col, game in zip(row1, games[:5]):
         with col:
             if game["Background Image"]:
-                st.image(game["Background Image"], width="content")
+                st.image(game["Background Image"], width=300)
             st.caption(game["Name"])
 
     row2 = st.columns(5)
@@ -100,5 +100,5 @@ def display_top_rated(games):
     for col, game in zip(row2, games[5:]):
         with col:
             if game["Background Image"]:
-                st.image(game["Background Image"], width="content")
+                st.image(game["Background Image"], width=300)
             st.caption(game["Name"])

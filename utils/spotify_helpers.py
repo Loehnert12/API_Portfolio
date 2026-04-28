@@ -91,7 +91,7 @@ def display_artist(artist):
     with col1:
 
         if artist["Image"]:
-            st.image(artist["Image"], width="content")
+            st.image(artist["Image"], width=600)
     
     with col2:
 
@@ -117,6 +117,6 @@ def display_artist(artist):
         for col, album in zip(cols, albums[i:i+4]):
             with col:
                 if album["Image"]:
-                    st.image(album["Image"], width="content")
+                    st.image(album["Image"], width=600)
                 st.caption(album["Name"])
 

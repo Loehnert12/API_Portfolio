@@ -59,7 +59,7 @@ def display_apod(apod):
             st.subheader(apod["Title"])
             st.image(
                 image=apod["URL"],
-                width="content",
+                width=600,
             )
         
         else:
