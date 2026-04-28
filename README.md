@@ -137,7 +137,8 @@ api_portfolio_app/
 │   └── config.toml          # Dark theme configuration
 ├── assets/
 │   ├── videos/
-│   │   └── demo_walkthrough.mp4
+│   │   ├── demo_walkthrough.mp4
+│   │   └── demo-walkthrough_compressed.mp4
 │   └── images/
 │       ├── profile.jpg
 │       ├── home_screenshot_1.png
