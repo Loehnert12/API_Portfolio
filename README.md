@@ -6,7 +6,7 @@ A multi-page **Streamlit** web application that demonstrates real-world API inte
 
 ## Live Demo
 
-> _Screenshots coming soon — app will be hosted publicly._
+<video src="assets/videos/demo_walkthrough.mp4" controls width="100%"></video>
 
 ---
 
@@ -136,6 +136,8 @@ api_portfolio_app/
 ├── .streamlit/
 │   └── config.toml          # Dark theme configuration
 ├── assets/
+│   ├── videos/
+│   │   └── demo_walkthrough.mp4
 │   └── images/
 │       ├── profile.jpg
 │       ├── home_screenshot_1.png
