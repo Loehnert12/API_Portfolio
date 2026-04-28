@@ -17,8 +17,8 @@ A multi-page **Streamlit** web application that demonstrates real-world API inte
 The landing page introduces the project and its purpose. It features a profile section, a summary of all five API integrations displayed as interactive cards, and a tech stack badge row.
 
 <!-- Screenshot: Home page with profile card and feature tiles -->
-![Home Screenshot 1](assets/images/home_screenshot_1.png)
-![Home Screenshot 2](assets/images/home_screenshot_2.png)
+![Home Screenshot 1](src/assets/images/home_screenshot_1.png)
+![Home Screenshot 2](src/assets/images/home_screenshot_2.png)
 
 ---
 
@@ -34,7 +34,7 @@ Enter any **City, State** (e.g., `Tampa, FL`) and get a live current-conditions 
 Uses the **Open-Meteo** geocoding and forecast APIs — no API key required. City input is geocoded to latitude/longitude before fetching weather data.
 
 <!-- Screenshot: Weather page with metric cards -->
-![Weather Screenshot](assets/images/weather_api.png)
+![Weather Screenshot](src/assets/images/weather_api.png)
 
 ---
 
@@ -45,9 +45,9 @@ Pick any date back to **June 16, 1995** and load NASA's Astronomy Picture of the
 Includes retry logic (up to 3 attempts) to gracefully handle intermittent NASA API 503 responses.
 
 <!-- Screenshot: NASA APOD page showing an image with explanation card -->
-![NASA Screenshot 1](assets/images/nasa_api_1.png)
-![NASA Screenshot 2](assets/images/nasa_api_2.png)
-![NASA Screenshot 3](assets/images/nasa_api_3.png)
+![NASA Screenshot 1](src/assets/images/nasa_api_1.png)
+![NASA Screenshot 2](src/assets/images/nasa_api_2.png)
+![NASA Screenshot 3](src/assets/images/nasa_api_3.png)
 
 ---
 
@@ -63,9 +63,9 @@ Search any video game title to retrieve detailed stats pulled from the **RAWG** 
 Results display as image + stat card pairs. The page also auto-loads a **Top Rated Games** section — a 2×5 grid of the ten highest-rated games on RAWG.
 
 <!-- Screenshot: RAWG page showing game search results and top-rated grid -->
-![RAWG Screenshot 1](assets/images/rawg_api_1.png)
-![RAWG Screenshot 2](assets/images/rawg_api_2.png)
-![RAWG Screenshot 3](assets/images/rawg_api_3.png)
+![RAWG Screenshot 1](src/assets/images/rawg_api_1.png)
+![RAWG Screenshot 2](src/assets/images/rawg_api_2.png)
+![RAWG Screenshot 3](src/assets/images/rawg_api_3.png)
 
 ---
 
@@ -80,8 +80,8 @@ Search any artist to pull their **Spotify** profile data:
 Authentication uses the **OAuth 2.0 Client Credentials** flow — the app exchanges a Client ID + Secret for a bearer token on each request, without requiring user login.
 
 <!-- Screenshot: Spotify page showing artist profile and album grid -->
-![Spotify Screenshot 1](assets/images/spotify_api_1.png)
-![Spotify Screenshot 2](assets/images/spotify_api_2.png)
+![Spotify Screenshot 1](src/assets/images/spotify_api_1.png)
+![Spotify Screenshot 2](src/assets/images/spotify_api_2.png)
 
 ---
 
@@ -96,8 +96,8 @@ Search any Pokémon by name to display its full Pokédex entry:
 Built with **PokéAPI** (free, no key required) and visualized using **Plotly**.
 
 <!-- Screenshot: Pokemon page showing sprite and stat bar chart -->
-![Pokemon Screenshot 1](assets/images/pokemon_api_1.png)
-![Pokemon Screenshot 2](assets/images/pokemon_api_2.png)
+![Pokemon Screenshot 1](src/assets/images/pokemon_api_1.png)
+![Pokemon Screenshot 2](src/assets/images/pokemon_api_2.png)
 
 ---
 
