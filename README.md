@@ -128,38 +128,46 @@ Built with **PokéAPI** (free, no key required) and visualized using **Plotly**.
 
 ```
 api_portfolio_app/
-├── Home.py                  # Landing page
+├── app.py                   # Entry point / landing page
 ├── README.md
 ├── requirements.txt
 ├── .env                     # API keys (not committed)
 ├── .gitignore
 ├── .streamlit/
 │   └── config.toml          # Dark theme configuration
-├── assets/
-│   ├── videos/
-│   │   ├── demo_walkthrough.mp4
-│   │   └── demo-walkthrough_compressed.mp4
-│   └── images/
-│       ├── profile.jpg
-│       ├── home_screenshot_1.png
-│       ├── home_screenshot_2.png
-│       ├── weather_api.png
-│       ├── nasa_api_1.png
-│       ├── nasa_api_2.png
-│       ├── nasa_api_3.png
-│       ├── rawg_api_1.png
-│       ├── rawg_api_2.png
-│       ├── rawg_api_3.png
-│       ├── spotify_api_1.png
-│       ├── spotify_api_2.png
-│       ├── pokemon_api_1.png
-│       └── pokemon_api_2.png
-├── pages/
-│   ├── 01_Weather.py
-│   ├── 02_NASA.py
-│   ├── 03_RAWG.py
-│   ├── 04_Spotify.py
-│   └── 05_Pokemon.py
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   │   ├── profile.jpg
+│   │   │   ├── home_screenshot_1.png
+│   │   │   ├── home_screenshot_2.png
+│   │   │   ├── weather_api.png
+│   │   │   ├── nasa_api_1.png
+│   │   │   ├── nasa_api_2.png
+│   │   │   ├── nasa_api_3.png
+│   │   │   ├── rawg_api_1.png
+│   │   │   ├── rawg_api_2.png
+│   │   │   ├── rawg_api_3.png
+│   │   │   ├── spotify_api_1.png
+│   │   │   ├── spotify_api_2.png
+│   │   │   ├── pokemon_api_1.png
+│   │   │   └── pokemon_api_2.png
+│   │   └── videos/
+│   │       ├── demo_walkthrough.mp4
+│   │       └── demo-walkthrough_compressed.mp4
+│   └── features/
+│       ├── home/
+│       │   └── home_page.py
+│       ├── weather/
+│       │   └── Weather.py
+│       ├── nasa/
+│       │   └── NASA.py
+│       ├── rawg/
+│       │   └── RAWG.py
+│       ├── spotify/
+│       │   └── Spotify.py
+│       └── pokemon/
+│           └── Pokemon.py
 └── utils/
     ├── style.py             # Global CSS
     ├── weather_helpers.py
@@ -169,7 +177,7 @@ api_portfolio_app/
     └── pokemon_helpers.py
 ```
 
-Each page imports a dedicated helper module from `utils/`, keeping display logic and API logic cleanly separated.
+Each feature module in `src/features/` contains its page UI, while `utils/` holds the shared API helper functions and styling — keeping display logic and API logic cleanly separated.
 
 ---
 
@@ -180,6 +188,7 @@ Each page imports a dedicated helper module from `utils/`, keeping display logic
 git clone https://github.com/<your-username>/api_portfolio_app.git
 cd api_portfolio_app
 ```
+
 
 **2. Install dependencies**
 ```bash
@@ -202,7 +211,7 @@ SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
 
 **4. Launch the app**
 ```bash
-streamlit run Home.py
+streamlit run app.py
 ```
 
 The app will open at `http://localhost:8501`.

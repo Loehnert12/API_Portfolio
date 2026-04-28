@@ -3,17 +3,10 @@ from utils.style import load_css
 
 load_css()
 
-st.set_page_config(
-    page_title="API Streamlit Portfolio",
-    page_icon="🎮",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
-
 col1, col2 = st.columns([1, 3])
 
 with col1:
-    st.image("assets/images/profile.jpg", width=300)
+    st.image("src/assets/images/profile.jpg", width=300)
 
 with col2:
     st.markdown(
@@ -23,14 +16,6 @@ with col2:
         A collection of 5 Python-powered API integrations built to demonstrate real-world data fetching, processing, and visualization skills.
         """
     )
-
-# st.markdown(
-#     """
-#     # Daniel Loehnert API Portfolio
-#     ## Data Analyst | Full-Stack Data Dev
-#     A collection of 5 Python-powered API integrations built to demonstrate real-world data fetching, processing, and visualization skills.
-#     """
-# )
 
 st.divider()
 
@@ -137,4 +122,4 @@ st.markdown(
     View My GitHub</a>
     """,
     unsafe_allow_html=True
-    )
+)

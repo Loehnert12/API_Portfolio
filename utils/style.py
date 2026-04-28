@@ -6,7 +6,7 @@ def load_css():
         @import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');
 
         * {
-            font-family: 'Oxanium', sans-serif !important;
+            font-family: 'Oxanium', sans-serif;
         }
         
         [data-testid="stSidebarContent"] {
@@ -20,7 +20,7 @@ def load_css():
             background: linear-gradient(90deg, transparent, #4482C7, transparent);
             margin: 20px 0;
         }
-                
+
         .card {
             background-color: #262525;
             border-radius: 10px;
