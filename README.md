@@ -6,7 +6,7 @@ A multi-page **Streamlit** web application that demonstrates real-world API inte
 
 ## Live Demo
 
-<video src="assets/videos/demo_walkthrough.mp4" controls width="100%"></video>
+<video src="https://github.com/Loehnert12/API_Portfolio/releases/download/v1.0/demo_walkthrough.mp4" controls width="100%"></video>
 
 ---
 
