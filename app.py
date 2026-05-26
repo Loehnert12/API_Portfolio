@@ -1,3 +1,10 @@
+"""
+Entry point for the API Streamlit Portfolio app.
+
+Configures the Streamlit page and sets up multi-page navigation across
+the Home, Weather, NASA, RAWG, Spotify, and Pokemon feature pages.
+"""
+
 import streamlit as st
 
 st.set_page_config(

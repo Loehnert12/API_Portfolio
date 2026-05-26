@@ -103,7 +103,6 @@ def get_weather_summary(latitude, longitude):
         "Rain": f"{rain} mm",
         "Relative Humidity": f"{relative_humidity}%",
         "Apparent Temperature": f"{apparent_temperature}°F",
-
     }
 
 def final_weather_summary(weather, city_name):
