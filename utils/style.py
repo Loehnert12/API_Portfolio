@@ -1,6 +1,8 @@
+"""Custom CSS loader for the API Portfolio Streamlit app."""
 import streamlit as st
 
 def load_css():
+    """Inject custom CSS into the Streamlit app (Oxanium font, card/badge styles, heading colours)."""
     st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');

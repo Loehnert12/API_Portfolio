@@ -1,3 +1,4 @@
+"""Helper functions for authenticating with Spotify and fetching artist/album data."""
 from dotenv import load_dotenv
 import os
 import requests
@@ -12,7 +13,11 @@ AUTH_URL = "https://accounts.spotify.com/api/token"
 BASE_URL = "https://api.spotify.com/v1"
 
 def get_token():
+    """Obtain a Spotify API access token via the Client Credentials flow.
 
+    Returns:
+        The access token string, or None if authentication fails.
+    """
     auth = (CLIENT_ID, CLIENT_SECRET)
     data = {"grant_type": "client_credentials"}
 
@@ -28,7 +33,17 @@ def get_token():
     return token
 
 def get_artist_data(artist):
+    """Fetch an artist's profile and album list from the Spotify API.
 
+    Searches for the top matching artist by name, then retrieves their albums.
+
+    Args:
+        artist: The artist name to search for (e.g. "Taylor Swift").
+
+    Returns:
+        A dict with keys Name, Image, Spotify URL, and Albums (list of dicts
+        with Name and Image), or None if any request fails.
+    """
     token = get_token()
 
     headers = {"Authorization": f"Bearer {token}"}
@@ -83,7 +98,11 @@ def get_artist_data(artist):
     }
 
 def display_artist(artist):
+    """Render an artist's photo, Spotify link, and album grid in the Streamlit app.
 
+    Args:
+        artist: A dict as returned by get_artist_data.
+    """
     st.divider()
 
     col1, col2 = st.columns([1, 2])

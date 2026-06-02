@@ -1,3 +1,4 @@
+"""Pokémon page — allows users to search any Pokémon and view its stats and sprite."""
 import streamlit as st
 from utils.style import load_css
 from utils.pokemon_helpers import (

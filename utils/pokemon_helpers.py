@@ -1,3 +1,4 @@
+"""Helper functions for fetching Pokémon data from PokéAPI and rendering it in Streamlit."""
 import pandas as pd
 import plotly.express as px
 import requests
@@ -6,7 +7,15 @@ import streamlit as st
 BASE_URL = "https://pokeapi.co/api/v2"
 
 def get_pokemon_summary(name):
+    """Fetch summary data for a Pokémon by name or ID from the PokéAPI.
 
+    Args:
+        name: The Pokémon's name (e.g. "charizard") or numeric ID.
+
+    Returns:
+        A dict with keys Name, ID, Height, Weight, Base Experience, Type, Sprite,
+        and Stats, or None if the Pokémon is not found.
+    """
     response = requests.get(f"{BASE_URL}/pokemon/{name}")
 
     if response.status_code != 200:
@@ -28,7 +37,11 @@ def get_pokemon_summary(name):
     }
 
 def display_pokemon(pokemon):
+    """Render a Pokémon's sprite, info, and a horizontal base-stats bar chart in the Streamlit app.
 
+    Args:
+        pokemon: A dict as returned by get_pokemon_summary.
+    """
     st.divider()
 
     col1, col2 = st.columns([1, 2])
@@ -68,7 +81,15 @@ def display_pokemon(pokemon):
         yaxis_title=None,
         xaxis_title="Base Stat Value",
         font=dict(size=20),
-        height=400,
+        height=500,
+        bargap=0,
     )
-    fig.update_traces(textfont_size=14)
-    st.plotly_chart(fig, width="stretch")
+    fig.update_traces(
+        width=0.8,
+        textfont_size=16,
+        textfont_color="black",
+        textfont=dict(size=16, color="black", weight="bold"),
+        textposition="inside",
+        insidetextanchor="middle",
+    )
+    st.plotly_chart(fig, use_container_width=True)

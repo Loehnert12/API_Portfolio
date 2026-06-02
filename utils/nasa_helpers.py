@@ -1,3 +1,4 @@
+"""Helper functions for fetching and displaying NASA's Astronomy Picture of the Day (APOD)."""
 from dotenv import load_dotenv
 import os
 import requests
@@ -10,7 +11,17 @@ API_KEY = os.getenv("NASA_API_KEY")
 BASE_URL = "https://api.nasa.gov/planetary/apod"
 
 def get_apod_by_date(date):
+    """Fetch NASA's Astronomy Picture of the Day for a given date.
 
+    Retries up to 3 times on 503 errors before giving up.
+
+    Args:
+        date: A date object or string in YYYY-MM-DD format.
+
+    Returns:
+        A dict with keys Title, Date, Copyright, URL, Explanation, and Media Type,
+        or None if the request fails.
+    """
     date = str(date)
 
     param = {
@@ -49,7 +60,12 @@ def get_apod_by_date(date):
     }
 
 def display_apod(apod):
-    
+    """Render APOD content (image or video) and its metadata in the Streamlit app.
+
+    Args:
+        apod: A dict as returned by get_apod_by_date, containing URL, Media Type,
+              Title, Date, Copyright, and Explanation.
+    """
     _, col2, _ = st.columns([1, 3, 1])
 
     with col2:

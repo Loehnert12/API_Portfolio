@@ -1,3 +1,4 @@
+"""RAWG page — lets users search for video games and displays top-rated games on load."""
 import streamlit as st
 from utils.style import load_css
 from utils.rawg_helpers import (

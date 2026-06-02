@@ -1,3 +1,4 @@
+"""Home page — landing page displaying the portfolio intro, feature cards, and tech stack."""
 import streamlit as st
 from utils.style import load_css
 
