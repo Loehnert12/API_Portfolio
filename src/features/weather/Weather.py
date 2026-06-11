@@ -1,4 +1,6 @@
-"""Weather page — geocodes a user-entered city and displays current weather conditions."""
+"""
+Weather page — geocodes a user-entered city and displays current weather conditions.
+"""
 import streamlit as st
 from utils.style import load_css
 from utils.weather_helpers import (

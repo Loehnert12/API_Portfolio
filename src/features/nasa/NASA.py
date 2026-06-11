@@ -1,4 +1,6 @@
-"""NASA APOD page — lets users pick any date and view the Astronomy Picture of the Day."""
+"""
+NASA APOD page — lets users pick any date and view the Astronomy Picture of the Day.
+"""
 import streamlit as st
 import datetime
 from utils.style import load_css

@@ -1,4 +1,6 @@
-"""Helper functions for geocoding locations and fetching current weather from Open-Meteo."""
+"""
+Helper functions for geocoding locations and fetching current weather from Open-Meteo.
+"""
 import requests
 import streamlit as st
 
@@ -29,7 +31,8 @@ STATE_ABBREVIATIONS = {
 }
 
 def get_coordinates(name):
-    """Geocode a city/state string to latitude, longitude, and a display name.
+    """
+    Geocode a city/state string to latitude, longitude, and a display name.
 
     Accepts input in the format "City, ST" (e.g. "Tampa, FL"). When a state
     abbreviation is provided it is expanded to a full name for matching.
@@ -72,7 +75,8 @@ def get_coordinates(name):
     return (results[0]["latitude"], results[0]["longitude"], f"{results[0]['name']}, {results[0].get('admin1', '')}")
 
 def get_weather_summary(latitude, longitude):
-    """Fetch current weather conditions for a location from the Open-Meteo API.
+    """
+    Fetch current weather conditions for a location from the Open-Meteo API.
 
     Returns data in Fahrenheit and mph. Timezone is fixed to America/New_York.
 
@@ -128,7 +132,8 @@ def get_weather_summary(latitude, longitude):
     }
 
 def final_weather_summary(weather, city_name):
-    """Render current weather conditions as a 2-row grid of metric cards in the Streamlit app.
+    """
+    Render current weather conditions as a 2-row grid of metric cards in the Streamlit app.
 
     Args:
         weather: A dict as returned by get_weather_summary.

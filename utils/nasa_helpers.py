@@ -1,4 +1,7 @@
-"""Helper functions for fetching and displaying NASA's Astronomy Picture of the Day (APOD)."""
+"""
+Helper functions for fetching and displaying NASA's Astronomy 
+Picture of the Day (APOD).
+"""
 from dotenv import load_dotenv
 import os
 import requests
@@ -11,7 +14,8 @@ API_KEY = os.getenv("NASA_API_KEY")
 BASE_URL = "https://api.nasa.gov/planetary/apod"
 
 def get_apod_by_date(date):
-    """Fetch NASA's Astronomy Picture of the Day for a given date.
+    """
+    Fetch NASA's Astronomy Picture of the Day for a given date.
 
     Retries up to 3 times on 503 errors before giving up.
 
@@ -60,7 +64,8 @@ def get_apod_by_date(date):
     }
 
 def display_apod(apod):
-    """Render APOD content (image or video) and its metadata in the Streamlit app.
+    """
+    Render APOD content (image or video) and its metadata in the Streamlit app.
 
     Args:
         apod: A dict as returned by get_apod_by_date, containing URL, Media Type,
@@ -71,17 +76,17 @@ def display_apod(apod):
     with col2:
 
         if apod["Media Type"] == "image":
-            
+
             st.subheader(apod["Title"])
             st.image(
                 image=apod["URL"],
                 width=600,
             )
-        
+
         else:
 
             st.video(apod["URL"], autoplay=True, muted=False)
-        
+
     st.markdown(f"""
         <div class="card">
             <p>📅 {apod['Date']} | © {apod['Copyright']}</p>

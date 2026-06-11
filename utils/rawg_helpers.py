@@ -1,4 +1,6 @@
-"""Helper functions for searching games and fetching top-rated games via the RAWG API."""
+"""
+Helper functions for searching games and fetching top-rated games via the RAWG API.
+"""
 from dotenv import load_dotenv
 import os
 import requests
@@ -10,7 +12,8 @@ API_KEY = os.getenv("RAWG_API_KEY")
 BASE_URL = "https://api.rawg.io/api"
 
 def get_game_summary(query):
-    """Search the RAWG API for games matching a query string.
+    """
+    Search the RAWG API for games matching a query string.
 
     Args:
         query: The search term (e.g. a game title or keyword).
@@ -48,7 +51,8 @@ def get_game_summary(query):
     return games
 
 def get_top_rated_games():
-    """Fetch the top 10 highest-rated games from the RAWG API.
+    """
+    Fetch the top 10 highest-rated games from the RAWG API.
 
     Returns:
         A list of dicts, each containing Name, Rating, and Background Image,
@@ -77,7 +81,8 @@ def get_top_rated_games():
     return games
 
 def display_game_results(games):
-    """Render a list of game search results as side-by-side image/detail cards in the Streamlit app.
+    """
+    Render a list of game search results as side-by-side image/detail cards in the Streamlit app.
 
     Args:
         games: A list of dicts as returned by get_game_summary.
@@ -103,7 +108,8 @@ def display_game_results(games):
             st.markdown(f"🔞 **ESRB Rating:** {game['ESRB Rating']}")
 
 def display_top_rated(games):
-    """Render the top-rated games as a two-row grid of cover images with captions in the Streamlit app.
+    """
+    Render the top-rated games as a two-row grid of cover images with captions in the Streamlit app.
 
     Args:
         games: A list of dicts as returned by get_top_rated_games (expects at least 10 items).

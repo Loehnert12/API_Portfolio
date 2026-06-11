@@ -1,4 +1,6 @@
-"""Spotify page — lets users search for an artist and view their profile and album discography."""
+"""
+Spotify page — lets users search for an artist and view their profile and album discography.
+"""
 import streamlit as st
 from utils.style import load_css
 from utils.spotify_helpers import (
